@@ -31,8 +31,9 @@ var Queue = function () {
   };
 
   someInstance.size = function () {
-    var keys = Object.keys(storage);
-    return keys.length;
+    // var keys = Object.keys(storage);
+    // return keys.length;
+    return count;
   };
   return someInstance;
 };

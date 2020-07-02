@@ -9,7 +9,7 @@ var Queue = function () {
   var instance = {};
   instance.storage = {};
   instance.i = 0;
-  _.extend(instance, stackMethods);
+  _.extend(instance, queueMethods);
   return instance;
 };
 
@@ -19,7 +19,17 @@ var queueMethods = {
     this.i++;
   },
   dequeue() {
-    // some code
+    if (this.i < 1) {
+      return this.i;
+    }
+    var first = this.storage[0];
+    for (var i = 1; i < this.i; i++) {
+      this.storage[i - 1] = this.storage[i];
+    }
+
+    delete this.storage[this.i - 1];
+    this.i--;
+    return first;
   },
   size() {
     return this.i;

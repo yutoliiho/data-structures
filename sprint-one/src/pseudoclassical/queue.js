@@ -11,7 +11,17 @@ Queue.prototype.enqueue = function (val) {
 };
 
 Queue.prototype.dequeue = function () {
-  // this.storage[this.i];
+  if (this.i < 1) {
+    return this.i;
+  }
+  var first = this.storage[0];
+  for (var i = 1; i < this.i; i++) {
+    this.storage[i - 1] = this.storage[i];
+  }
+
+  delete this.storage[this.i - 1];
+  this.i--;
+  return first;
 };
 
 Queue.prototype.size = function () {

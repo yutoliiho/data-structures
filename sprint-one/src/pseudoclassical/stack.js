@@ -11,9 +11,14 @@ Stack.prototype.push = function (val) {
 };
 
 Stack.prototype.pop = function () {
-  var last = this.storage[this.i - 1];
+  if (this.i < 1) {
+    return this.storage;
+  }
+
+  var first = this.storage[this.i - 1];
   delete this.storage[this.i - 1];
-  return last;
+  this.i--;
+  return first;
 };
 
 Stack.prototype.size = function () {
