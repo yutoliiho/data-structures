@@ -17,7 +17,7 @@ BinarySearchTree.prototype.insert = function (value) {
   // accepts a value and places in the tree in the correct position.
   var node = BinarySearchTree(value);
 
-  function recurse(bst) {
+  var recurse = function (bst) {
     if (bst.value > value && bst.left === undefined) {
       bst.left = node;
     } else if (bst.value > value) {
@@ -27,7 +27,7 @@ BinarySearchTree.prototype.insert = function (value) {
     } else if (bst.value < value) {
       recurse(bst.right);
     }
-  }
+  };
 
   recurse(this);
 };
@@ -35,7 +35,7 @@ BinarySearchTree.prototype.insert = function (value) {
 BinarySearchTree.prototype.contains = function (value) {
   var doesContain = false;
   //accepts a value and returns a boolean reflecting whether or not the value is contained in the tree.
-  function recurse(bst) {
+  var recurse = function (bst) {
     if (bst.value === value) {
       doesContain = true;
     } else if (bst.left !== undefined && value < bst.value) {
@@ -43,7 +43,7 @@ BinarySearchTree.prototype.contains = function (value) {
     } else if (bst.right !== undefined && value > bst.value) {
       recurse(bst.right);
     }
-  }
+  };
 
   recurse(this);
   return doesContain;
@@ -51,7 +51,7 @@ BinarySearchTree.prototype.contains = function (value) {
 
 BinarySearchTree.prototype.depthFirstLog = function (callback) {
   //accepts a callback and executes it on every value contained in the tree.
-  function recurse(bst) {
+  var recurse = function (bst) {
     callback.call(bst, bst.value);
 
     if (bst.left !== undefined) {
@@ -61,7 +61,7 @@ BinarySearchTree.prototype.depthFirstLog = function (callback) {
     if (bst.right !== undefined) {
       recurse(bst.right);
     }
-  }
+  };
 
   recurse(this);
 };
