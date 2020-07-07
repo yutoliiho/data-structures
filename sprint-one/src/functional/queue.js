@@ -37,3 +37,5 @@ var Queue = function () {
   };
   return someInstance;
 };
+
+// var queue = Queue()

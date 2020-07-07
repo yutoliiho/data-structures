@@ -1,4 +1,11 @@
 // [Node({head: val, next; }), Node(), Node(next -> null) ]
+/**
+ * head: {val: bla
+ *        next: {
+ *          val: bla;
+ *        }}
+ *
+ */
 
 var LinkedList = function () {
   var list = {};
@@ -64,4 +71,19 @@ var Node = function (value) {
 //             }
 //         }
 //     }
+// };
+
+
+//   const list = {
+//     head: {
+//         value: 12
+//         next: {
+//             value: 99
+//             next: {
+//                 value: 37
+//                 next: null
+//             }
+//         }
+//     }
+//      tail: myNodeObj // head.next.next
 // };

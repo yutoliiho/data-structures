@@ -5,8 +5,7 @@ var HashTable = function () {
 
 // SAME AS: obj[key] = value  ==>  O(1)
 HashTable.prototype.insert = function (k, v) {
-  // arguments: str, max_limit
-  // console.log(k, v);
+
   var index = getIndexBelowMaxForKey(k, this._limit);
   if (!this._storage[index]) {
     this._storage[index] = [];
@@ -19,15 +18,16 @@ HashTable.prototype.insert = function (k, v) {
 // SAME AS: obj[key] ==> O(n)
 HashTable.prototype.retrieve = function (k) {
   var index = getIndexBelowMaxForKey(k, this._limit);
+  // return this._storage[index][0][1] // <--- O(1)
   if (this._storage[index]) {
     for (var i = 0; i < this._storage[index].length; i++) {
       var overRide;
       if (this._storage[index][i][0] === k) {
-        overRide = this._storage[index][i][1];
+        var overRide = this._storage[index][i][1];
       }
     }
     return overRide;
-  }
+  } // <--- O(n)
   return undefined;
 };
 

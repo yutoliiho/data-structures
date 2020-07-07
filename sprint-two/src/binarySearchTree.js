@@ -1,6 +1,42 @@
 // This Binary Search Tree is implemented using the prototypal pattern
 //initjs.org/implement-a-binary-search-tree-in-javascript-952a44ee7c26
 
+// bst = {
+//   root: val;
+//   left: {
+//     root: val;
+//     left: {
+
+//     },
+//     right: {
+
+//     }
+//   }
+//   right:
+// }
+
+// Tree = function {
+//   root: NodeObject;
+// }
+
+// Node = function {
+//   value: alphanumeric:
+//   left: NodeObject;
+//   right: NodeObject:
+// }
+
+// {
+//   root: val;
+//   right: null;
+//   left: null
+// }
+
+// zoom is ended.
+
+// Tree.root.left.right.left.right.value = 5
+
+// Tree.root.
+
 var BinarySearchTree = function (value) {
   var instance = Object.create(BinarySearchTree.prototype);
 
