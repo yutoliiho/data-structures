@@ -14,7 +14,7 @@ treeMethods.addChild = function (value) {
 };
 
 treeMethods.contains = function (target, root) {
-  root = root || this;
+  var root = root || this;
   if (root.value === target) {
     return true; // base-case
   }
